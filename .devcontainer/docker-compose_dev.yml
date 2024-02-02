@@ -29,6 +29,7 @@ services:
         condition: service_healthy
     network_mode: service:db
     environment:
+      MYSQL_HOST: db
       MYSQL_ROOT_PASSWORD: app_password
       MYSQL_DATABASE: relecloud
       MYSQL_USER: app_user
