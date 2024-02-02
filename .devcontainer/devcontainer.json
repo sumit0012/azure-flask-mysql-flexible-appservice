@@ -11,9 +11,9 @@
     "service": "app",
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
-    "forwardPorts": [8000, 3306],
+    "forwardPorts": [5000, 3306],
     "portsAttributes": {
-        "8000": {"label": "frontend web port", "onAutoForward": "notify"},
+        "5000": {"label": "Web port", "onAutoForward": "notify"},
         "3306": {"label": "MySQL Port", "onAutoForward": "silent"}
     },
     "customizations": {
