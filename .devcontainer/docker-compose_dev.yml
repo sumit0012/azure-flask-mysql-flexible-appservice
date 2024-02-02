@@ -1,0 +1,43 @@
+version: '3'
+services:
+  db:
+    image: mysql:latest
+
+    environment:
+      MYSQL_ROOT_PASSWORD: app_password
+      MYSQL_DATABASE: relecloud
+      MYSQL_USER: app_user
+      MYSQL_PASS: app_password
+
+    restart: unless-stopped
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin -u app_user -p'app_password' ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile_dev
+    depends_on:
+      db:
+        condition: service_healthy
+    network_mode: service:db
+    environment:
+      MYSQL_ROOT_PASSWORD: app_password
+      MYSQL_DATABASE: relecloud
+      MYSQL_USER: app_user
+      MYSQL_PASS: app_password
+
+    command: sleep infinity
+
+    volumes:
+      - ..:/workspace:cached
+
+volumes:
+  mysql-data:
