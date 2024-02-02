@@ -1,5 +1,5 @@
 """
-Models for PostgreSQL
+Models for MySQL
 
 """
 from typing import List, Optional

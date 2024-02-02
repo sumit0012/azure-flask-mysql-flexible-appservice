@@ -1,5 +1,5 @@
 """
-Seeder module for the PostgreSQL database.
+Seeder module for the MySQL database.
 """
 import json
 
