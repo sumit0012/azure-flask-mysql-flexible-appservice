@@ -8,10 +8,10 @@ var dbserverUser = 'admin${uniqueString(resourceGroup().id)}'
 param dbserverPassword string
 param dbserverDatabaseName string
 
-module dbserver 'core/database/postgresql/flexibleserver.bicep' = {
+module dbserver 'core/database/mysql/flexibleserver.bicep' = {
   name: name
   params: {
-    name: '${prefix}-postgresql'
+    name: '${prefix}-mysql'
     location: location
     tags: tags
     sku: {
@@ -19,12 +19,12 @@ module dbserver 'core/database/postgresql/flexibleserver.bicep' = {
       tier: 'Burstable'
     }
     storage: {
-      storageSizeGB: 32
+      storageSizeGB: 20
     }
-    version: '15'
-    administratorLogin: dbserverUser
-    administratorLoginPassword: dbserverPassword
-    databaseNames: [dbserverDatabaseName]
+    version: '8.0.21'
+    adminName: dbserverUser
+    adminPassword: dbserverPassword
+    databaseNames: [ dbserverDatabaseName ]
     allowAzureIPsFirewall: true
   }
 }
