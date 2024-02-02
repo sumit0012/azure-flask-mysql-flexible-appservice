@@ -15,8 +15,8 @@ services:
       - mysql-data:/var/lib/mysql
 
     healthcheck:
-      test: ["CMD-SHELL", "mysqladmin -u app_user -p'app_password' ping"]
-      interval: 5s
+      test: ["CMD-SHELL", "mysqladmin ping"]
+      interval: 10s
       timeout: 5s
       retries: 5
 
