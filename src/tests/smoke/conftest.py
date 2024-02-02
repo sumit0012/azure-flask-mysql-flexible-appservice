@@ -5,7 +5,7 @@ def pytest_addoption(parser):
     parser.addoption(
         "--live-server-url",
         action="store",
-        default="http://localhost:8000",
+        default="http://localhost:5000",
         help="URL for the live server to test against",
     )
 

@@ -44,7 +44,7 @@ export MYSQL_PASS=<YOUR PASSWORD>
 If you're running the app inside VS Code or GitHub Codespaces, you can use the "Run and Debug" button to start the app.
 
 ```sh
-python3 -m flask --app src.flaskapp run --debug --reload --port=8000
+python3 -m flask --app src.flaskapp run --debug --reload
 ```
 
 ## Running tests
