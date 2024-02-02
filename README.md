@@ -94,7 +94,7 @@ Steps for deployment:
 
 ### CI/CD pipeline
 
-This project includes a Github workflow for deploying the resources to Azure
+This project includes a GitHub workflow for deploying the resources to Azure
 on every push to main. That workflow requires several Azure-related authentication secrets
 to be stored as Github action secrets. To set that up, run:
 
