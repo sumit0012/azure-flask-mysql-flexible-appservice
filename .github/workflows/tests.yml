@@ -30,6 +30,7 @@ jobs:
         image: mysql:8.2
         env:
           MYSQL_ROOT_PASSWORD: mysql
+          MYSQL_DATABASE: relecloud
         ports:
         - 3306:3306
         # needed because the mysql container does not provide a healthcheck
@@ -57,4 +58,4 @@ jobs:
             MYSQL_HOST: localhost
             MYSQL_USER: root
             MYSQL_PASS: mysql
-            MYSQL_DATABASE: mysql
+            MYSQL_DATABASE: relecloud
