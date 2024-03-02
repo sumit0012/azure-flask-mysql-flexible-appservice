@@ -45,7 +45,7 @@ module web 'core/host/appservice.bicep' = {
       RUNNING_IN_PRODUCTION: 'true'
       MYSQL_HOST: dbserverDomainName
       MYSQL_USER: dbserverUser
-      MYSQL_NAME: dbserverDatabaseName
+      MYSQL_DATABASE: dbserverDatabaseName
       MYSQL_PASS: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=DBSERVERPASSWORD)'
       SECRET_KEY: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=SECRETKEY)'
     }
