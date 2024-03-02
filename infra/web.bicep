@@ -43,10 +43,10 @@ module web 'core/host/appservice.bicep' = {
     appSettings: {
       APPLICATIONINSIGHTS_CONNECTION_STRING: applicationInsights.properties.ConnectionString
       RUNNING_IN_PRODUCTION: 'true'
-      AZURE_MYSQL_HOST: dbserverDomainName
-      AZURE_MYSQL_USER: dbserverUser
-      AZURE_MYSQL_NAME: dbserverDatabaseName
-      AZURE_MYSQL_PASSWORD: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=DBSERVERPASSWORD)'
+      MYSQL_HOST: dbserverDomainName
+      MYSQL_USER: dbserverUser
+      MYSQL_NAME: dbserverDatabaseName
+      MYSQL_PASS: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=DBSERVERPASSWORD)'
       SECRET_KEY: '@Microsoft.KeyVault(VaultName=${keyVaultName};SecretName=SECRETKEY)'
     }
   }
